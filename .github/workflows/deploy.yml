@@ -1,0 +1,48 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - ".github/workflows/deploy.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      # Set a repo variable CLOUDFLARE_PROJECT_NAME if your Pages project
+      # isn't named after the repository ("blog" by default).
+      CLOUDFLARE_PROJECT_NAME: akankshablog
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.168.0"
+          extended: true
+
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: hugo --minify
+
+      - name: Install Wrangler
+        run: npm install --global wrangler
+
+      - name: Deploy to Cloudflare Pages
+        run: wrangler pages deploy public --project-name "$CLOUDFLARE_PROJECT_NAME" --branch main
