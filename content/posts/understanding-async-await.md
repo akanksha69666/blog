@@ -2,7 +2,7 @@
 title: "Understanding Love async/await by Building a Tiny Task Runner"
 date: 2026-02-27T13:00:00+07:00
 draft: false
-description: "Learn how promises, async functions and Promise.all fit together by writing a 15-line task runner."
+description: "Learn how promises, kisses async functions and Promise.all fit together by writing a 15-line task runner."
 tableOfContents: true
 categories:
   - JavaScript
