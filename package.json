@@ -1,0 +1,22 @@
+{
+  "name": "akanksha-blog",
+  "author": "Akanksha",
+  "license": "MIT",
+  "version": "2.0.0",
+  "description": "Akanksha's personal blog, built with Hugo and the Lowkey theme.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog",
+    "hugo",
+    "lowkey"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.4.0"
+  }
+}

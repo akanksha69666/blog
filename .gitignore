@@ -1,0 +1,5 @@
+.env
+.env.build
+node_modules
+public
+.hugo_build.lock

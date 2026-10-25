@@ -1,0 +1,25 @@
+[[main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[[main]]
+    identifier = "writing"
+    name = "Writing"
+    url = "/posts/"
+    weight = 2
+
+[[main]]
+    identifier = "about"
+    name = "About me"
+    url = "/about/"
+    weight = 3
+
+# Social Media Configuration
+
+[[social]]
+    identifier = "github"
+    name = "GitHub"
+    url = "#" # Replace with your profile URL
+    weight = 1
