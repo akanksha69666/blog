@@ -1,4 +1,4 @@
-baseURL = 'https://akanksha.dev/' # Change to your own domain
+baseURL = 'https://akankshablog.pages.dev/' # Change to your own domain
 copyright = "{year}"
 locale = 'en-US'
 defaultContentLanguage = 'en'
